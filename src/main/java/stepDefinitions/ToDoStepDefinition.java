@@ -10,6 +10,7 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.remote.RemoteWebDriver;
+import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 
 public class ToDoStepDefinition {
@@ -90,7 +91,29 @@ public class ToDoStepDefinition {
 
 	@Then("^Fill All the fields and select United States from Country Dropdown$")
 	public void fill_all_the_fields(){
-
+		WebElement name=driver.findElement(By.xpath("//input[@placeholder='Name']"));
+		name.sendKeys("Pranavi");
+		WebElement email=driver.findElement(By.xpath("//input[@placeholder='Email']"));
+		email.sendKeys("lakshmi-narayana.pranavi@capgemini.com");
+		WebElement password=driver.findElement(By.xpath("//input[@placeholder='Password']"));
+		password.sendKeys("Nagamani@05");
+		WebElement company =driver.findElement(By.xpath("//input[@placeholder='Company']"));
+		company.sendKeys("Capgemini");
+		WebElement website =driver.findElement(By.xpath("//input[@placeholder='Website']"));
+		website.sendKeys("Capgemini");
+		WebElement country =driver.findElement(By.xpath("//select[@name='country']"));
+		Select countrydropdown=new Select(country);
+		countrydropdown.selectByVisibleText("United States");
+		WebElement city =driver.findElement(By.xpath("//input[@placeholder='City']"));
+		city.sendKeys("Bangalore");
+		WebElement address1 =driver.findElement(By.xpath("//input[@placeholder='Address 1']"));
+		address1.sendKeys("Bangalore");
+		WebElement address2 =driver.findElement(By.xpath("//input[@placeholder='Address 2']"));
+		address2.sendKeys("Bangalore");
+        WebElement state= driver.findElement(By.xpath("//input[@placeholder='State']"));
+		state.sendKeys("Karnataka");
+		WebElement zipcode= driver.findElement(By.xpath("//input[@placeholder='Zip code']"));
+		zipcode.sendKeys("560036");
 	}
 
 
