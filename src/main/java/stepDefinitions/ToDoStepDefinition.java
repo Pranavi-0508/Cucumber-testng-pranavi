@@ -86,7 +86,13 @@ public class ToDoStepDefinition {
 
 	@Then("^Check whether Error message is displayed or not$")
 	public void check_whether_error_message_is_displayed_or_not(){
+		WebElement name=driver.findElement(By.xpath("//input[@placeholder='Name']"));
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		Boolean isValid = (Boolean) js.executeScript("return arguments[0].checkValidity();", name);
+		String validationMessage = (String) js.executeScript("return arguments[0].validationMessage;", name);
 
+		System.out.println("Is field valid? " + isValid);
+		System.out.println("Validation message: " + validationMessage);
 	}
 
 	@Then("^Fill All the fields and select United States from Country Dropdown$")
