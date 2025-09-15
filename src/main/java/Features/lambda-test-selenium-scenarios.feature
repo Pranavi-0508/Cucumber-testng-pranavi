@@ -16,3 +16,13 @@ When User Selects on Drag & Drop Sliders
 Then Select the slider Default value 15 and drag the bar to 95
 And Validate whether the range value shows 95
 
+
+Scenario: Lambdatest Input Form Submit
+
+Given User Navigates to Selenium Playground URL
+When User Selects on Input Form Submit
+When Click on Submit without filling any information in the form
+Then Check whether Error message is displayed or not
+Then Fill the Name & Email and Other fields
+Then From the Country Dropdown select United States
+And Click on Submit

@@ -70,4 +70,16 @@ public class ToDoStepDefinition {
 		WebElement output=driver.findElement(By.xpath("//output[@id='rangeSuccess']"));
 		Assert.assertEquals(output.getText(),"95");
 	}
+
+	@When("User Selects on Input Form Submit")
+	public void user_selects_input_form_submit(){
+		WebElement inputform = driver.findElement(By.xpath("//a[text()='Input Form Submit']"));
+		inputform.click();
+	}
+
+	@Then("Click on Submit without filling any information in the form")
+	public void click_on_submit_input_form(){
+		WebElement submit = driver.findElement(By.xpath("//button[text()='Submit']"));
+		submit.click();
+	}
 }
