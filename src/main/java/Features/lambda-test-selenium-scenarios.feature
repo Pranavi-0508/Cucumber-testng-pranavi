@@ -23,6 +23,5 @@ Given User Navigates to Selenium Playground URL
 When User Selects on Input Form Submit
 When Click on Submit without filling any information in the form
 Then Check whether Error message is displayed or not
-Then Fill the Name & Email and Other fields
-Then From the Country Dropdown select United States
+Then Fill All the fields and select United States from Country Dropdown
 And Click on Submit

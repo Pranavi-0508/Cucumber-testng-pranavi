@@ -71,14 +71,31 @@ public class ToDoStepDefinition {
 		Assert.assertEquals(output.getText(),"95");
 	}
 
-	@When("User Selects on Input Form Submit")
+	@When("^User Selects on Input Form Submit$")
 	public void user_selects_input_form_submit(){
 		WebElement inputform = driver.findElement(By.xpath("//a[text()='Input Form Submit']"));
 		inputform.click();
 	}
 
-	@Then("Click on Submit without filling any information in the form")
+	@Then("^Click on Submit without filling any information in the form$")
 	public void click_on_submit_input_form(){
+		WebElement submit = driver.findElement(By.xpath("//button[text()='Submit']"));
+		submit.click();
+	}
+
+	@Then("^Check whether Error message is displayed or not$")
+	public void check_whether_error_message_is_displayed_or_not(){
+
+	}
+
+	@Then("^Fill All the fields and select United States from Country Dropdown$")
+	public void fill_all_the_fields(){
+
+	}
+
+
+	@And("Click on Submit")
+	public void click_on_submit(){
 		WebElement submit = driver.findElement(By.xpath("//button[text()='Submit']"));
 		submit.click();
 	}
