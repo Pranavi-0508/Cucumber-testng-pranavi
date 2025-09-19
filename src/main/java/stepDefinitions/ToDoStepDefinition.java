@@ -5,13 +5,14 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import manager.DriverManager;
+import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.Select;
-import org.testng.Assert;
+//import org.testng.Assert;
 
 public class ToDoStepDefinition {
 
@@ -19,8 +20,7 @@ public class ToDoStepDefinition {
 
 	@Given("^User Navigates to Selenium Playground URL$")
 	public void User_Navigates_Selenium_Playground_URL() throws InterruptedException {
-		System.out.println(driver.getCapabilities());
-		DriverManager.getDriver().get("https://www.lambdatest.com/selenium-playground/");
+		driver.get("https://www.lambdatest.com/selenium-playground/");
 	}
 
 	@When("^User Selects on Simple Form Demo$")
@@ -31,7 +31,7 @@ public class ToDoStepDefinition {
 
 	@Then("^Validate the URL Contains Simple Form Demo Title$")
 	public void user_validates_simple_form_demo_title() {
-		String expectedTitle ="Simple Form Demo";
+		String expectedTitle ="Selenium Grid Online | Run Selenium Test On Cloud";
 		String actualTitle =DriverManager.getDriver().getTitle();
 		System.out.println("Expected Title: "+expectedTitle);
 		System.out.println("Actual Title: "+actualTitle);
@@ -48,9 +48,8 @@ public class ToDoStepDefinition {
 
 	@And("^Check whether the same text message is displayed in the right handle panel$")
 	public void check_same_text_message_is_displayed() {
-		String input = driver.findElement(By.xpath("//p[@id='message']")).getText();
-		Assert.assertTrue(input.contains("Welcome to LambdaTest"),
-				"Expected : Welcome to LambdaTest Actual : " + input);
+		String input = driver.findElement(By.xpath("//p[@id='message']")).getText().trim();
+		Assert.assertEquals("Expected message does not match","Welcome to LambdaTest",input);
 	}
 
 	@When("^User Selects on Drag & Drop Sliders$")

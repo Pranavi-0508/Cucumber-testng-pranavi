@@ -8,7 +8,7 @@
         <parameter name="version" value="latest"/>
         <parameter name="platform" value="Windows 10"/>
         <classes>
-            <class name="MyRunner.TestRunner" />
+            <class name="runner.Testrunner" />
         </classes>
     </test> <!-- Test -->
     <test name="CHROME" annotations="JDK"
@@ -17,7 +17,7 @@
         <parameter name="version" value="latest"/>
         <parameter name="platform" value="Windows 10"/>
         <classes>
-            <class name="MyRunner.TestRunner" />
+            <class name="runner.Testrunner" />
         </classes>
     </test> <!-- Test -->
     <test name="EDGE" annotations="JDK"
@@ -26,7 +26,7 @@
         <parameter name="version" value="latest"/>
         <parameter name="platform" value="Windows 10"/>
         <classes>
-          <class name="MyRunner.TestRunner" />
+          <class name="runner.Testrunner" />
         </classes>
     </test> <!-- Test -->
 

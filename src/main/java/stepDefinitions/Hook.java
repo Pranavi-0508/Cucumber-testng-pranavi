@@ -7,19 +7,19 @@ import manager.Driver;
 import manager.DriverManager;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
+import java.net.MalformedURLException;
+
 public class Hook {
-    public RemoteWebDriver driver = DriverManager.getDriver();
 
     @Before
-    public void updateName(Scenario scenario) throws InterruptedException {
-        driver.executeScript("lambda-name=" + scenario.getName());
+    public void setUp(Scenario scenario) throws InterruptedException, MalformedURLException {
+        System.out.println("Starting scenario:"+scenario.getName());
+        Driver.initDriver();
     }
 
     @After
     public void close_the_browser(Scenario scenario) throws InterruptedException {
-        driver.executeScript("lambda-status=" + (scenario.isFailed() ? "failed" : "passed"));
-        String testId = driver.getSessionId().toString();
-        System.out.println(testId);
+        System.out.println("Ending scenario:"+scenario.getName());
         Driver.quitDriver();
     }
 
