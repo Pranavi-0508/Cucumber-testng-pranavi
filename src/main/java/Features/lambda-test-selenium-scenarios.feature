@@ -1,5 +1,6 @@
 Feature: Validating LambdaTest Selenium Playground Scenarios
 
+
 Scenario: Lambdatest Simple Form Demo Page Scenario
 
 Given User Navigates to Selenium Playground URL
